@@ -1,13 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap-social/bootstrap-social.css';
+// import 'font-awesome/css/font-awesome.css';
+// import 'typeface-lobster';
+// import 'typeface-open-sans';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
