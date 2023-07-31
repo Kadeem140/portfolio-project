@@ -47,6 +47,11 @@ import {
                         </NavLink>
                     </NavItem>
                     <NavItem>
+                        <NavLink className='nav-link' to='/shop'>
+                            <i className='fa fa-cart fa-lg' /> Shop
+                        </NavLink>
+                    </NavItem>
+                    <NavItem>
                         <NavLink className='nav-link' to='/Total'>
                             <i className='fa fa-home fa-lg' /> Total orders
                         </NavLink>
