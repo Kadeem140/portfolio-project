@@ -16,7 +16,7 @@ const ShopPage = () => {
 
     return (
         <>
-            <p>Testing Out the shop</p>
+            <p>SHOP PAGE</p>
         </>
     )
 }
