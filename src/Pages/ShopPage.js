@@ -1,6 +1,7 @@
-import { useEffect } from "react"
-import axios from "axios"
-import APIKEY from "../utils/apiKey"
+import { useEffect } from "react";
+import axios from "axios";
+import APIKEY from "../utils/apiKey";
+import Header from '../Components/Header';
 
 
 const url = `https://rawg.io/api/games?key=${APIKEY}&dates=2023-01-01, 2023-07-28&ordering=-added`
@@ -16,6 +17,7 @@ const ShopPage = () => {
 
     return (
         <>
+            <Header />
             <p>SHOP PAGE</p>
         </>
     )

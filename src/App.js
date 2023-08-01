@@ -17,22 +17,22 @@ const url = `https://rawg.io/api/games?key=${apiKey}&dates=2023-01-01, 2023-07-2
 
 function App() {
     
-    useEffect = (() => {
-        axios.get(url)
-        .then(response => response.json())
-        .then(response => {
-          console.log(response, "API get call response")
-        })
-    }, []);
+    // useEffect = (() => {
+    //     axios.get(url)
+    //     .then(response => response.json())
+    //     .then(response => {
+    //       console.log(response, "API get call response")
+    //     })
+    // }, []);
     
   return (
     
     <div className="App">
-      <Header />
-        <Description />
+      {/* <Header />
+        <Description /> */}
         {/* <FeaturedProducts /> */}
         {/* <Sale items /> */}
-          <header className="App-header">
+          {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
@@ -45,7 +45,7 @@ function App() {
           >
             Learn React
           </a>
-          </header>
+          </header> */}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />

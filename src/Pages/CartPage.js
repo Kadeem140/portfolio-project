@@ -1,8 +1,13 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react';
+import Header from '../Components/Header';
 
 function CartPage() {
   return (
-    <div>CartPage</div>
+    
+    <div>
+      <Header />
+      CartPage
+    </div>
   )
 }
 

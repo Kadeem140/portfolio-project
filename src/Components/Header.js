@@ -52,12 +52,12 @@ import {
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink className='nav-link' to='/Total'>
+                        <NavLink className='nav-link' to='/total'>
                             <i className='fa fa-home fa-lg' /> Total orders
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink className='nav-link' to='/'>
+                        <NavLink className='nav-link' to='/cart'>
                             <i className="fa fa-shopping-cart fa-lg" /> Cart
                         </NavLink>
                     </NavItem>
