@@ -53,7 +53,7 @@ function App() {
         <Route path="/shop" element={<ShopPage />} />
         <Route path="/total" element={<TotalOrdersPage />} />
       </Routes>
-      {/* <DataFetching /> */}
+      <DataFetching />
     </div>
   );
 }
