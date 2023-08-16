@@ -1,6 +1,7 @@
 import Description from "../Components/Description";
 import Header from "../Components/Header";
 import DisplayList from "../Features/display/DisplayList";
+import DataFetching from "../utils/DataFetching";
 
 
 
@@ -9,7 +10,8 @@ const HomePage = () => {
         <>
             <Header />
             <Description />
-            <DisplayList />
+            <DataFetching />
+            {/* <DisplayList /> */}
              {/* <FeaturedProducts /> */}
              {/* <Sale items /> */}
         </>

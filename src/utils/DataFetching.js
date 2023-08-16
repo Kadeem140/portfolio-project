@@ -1,43 +1,49 @@
 import React, {useState, useEffect} from 'react';
-
 import axios from 'axios'
 import apiKey from './apiKey';
+import DisplayCard from '../Features/display/DisplayCard';
+import DisplayList from '../Features/display/DisplayList';
+import './DataFetching.css';
+let nextGameListUrl = null;
+
+
+const url = `https://rawg.io/api/games?key=${apiKey}&dates=2023-01-01,2023-07-28&ordering=-added`
 
 function DataFetching() {
-    const url = `https://rawg.io/api/games?key=${apiKey}&dates=2023-01-01,2023-07-28&ordering=-added`
-    const [games, setGames] = useState([]);
+
+    const [games, setGames] = useState([ ]);
+    console.log(games, "First games render")
+    
     useEffect(() => {
-        axios
-            .get(url)
-                // .then(response => response.json())
-                .then(response => {
-                    console.log(response, "API get call response")
-             })
-            .catch( err => {
-                console.log(err)
-            })
-    }, []);
-    // useEffect(() => {
-    //     axios.get(`https://rawg.io/api/games?key=${apiKey}&dates=2023-01-01, 2023-07-28&ordering=-added`)
-    //     // .then(response => response.json())
-    //     .then(response => {
-    //       console.log(response, "API get call response")
-    //     })
-    //     .catch( err => {
-    //         console.log(err)
-    //     })
-    // }, []);
+        axios.get(url)
+        .then(data => {
+            console.log(data, "API get call data")
+            nextGameListUrl = data.next ? data.next : null;
+            setGames(data.data.results)
+            // games.push(data.data.results)
+            // setGames(response.data.results[1])
+            console.log(games, "Array after setGames is called, before mapping")
+        })
+        .catch( err => {
+            console.log(err)
+        })
+    }, [])
 
   return (
     <div>
-        {/* <ul>
+         <ul className='list'>
             {
-                games.map(game => (
-                    <li key={game.id}>{game.name}</li>
-                ))   
+                games.map((game) => {
+                   return (
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <DisplayList game={game} />
+                    </div>
+                   )     
+                })
             }
-        </ul> */}
+        </ul> 
         <p>DataFetching Test</p>
+        
     </div>
   )
 }

@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.site-footer {
+  background-image: linear-gradient(#c8ffd5, white);
+  padding: 20px 0;
+  margin-top: 2rem;
+}
+
+.footer-container {
+  background-color: #c8ffd5;
+}
