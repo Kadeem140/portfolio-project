@@ -1,7 +1,7 @@
 import {Card, CardImg, CardText, CardBody, CardTitle} from 'reactstrap';
 
 const DisplayCard = (props) => { //image, title, genre, rating, etc
-    console.log("Games Card Props", props)
+    // console.log("Games Card Props", props)
     
     return (
         <>

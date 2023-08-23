@@ -3,7 +3,7 @@ import DisplayCard from './DisplayCard';
 
 
 const DisplayList = (props) => {
-    console.log(props.game, "DisplayList Props")
+    // console.log(props.game, "DisplayList Props")
     //Renders a list of DisplayCards containing 
     //content about videogames returned from API call
     return (

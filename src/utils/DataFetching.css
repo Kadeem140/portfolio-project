@@ -4,3 +4,9 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+.forms {
+    display: flex;
+    justify-content: start;
+    align-items: flex-end;
+}

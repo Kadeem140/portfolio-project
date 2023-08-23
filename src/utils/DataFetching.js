@@ -12,7 +12,7 @@ const url = `https://rawg.io/api/games?key=${apiKey}&dates=2023-01-01,2023-07-28
 function DataFetching() {
 
     const [games, setGames] = useState([ ]);
-    console.log(games, "First games render")
+    // console.log(games, "First games render")
     
     useEffect(() => {
         axios.get(url)
@@ -22,7 +22,7 @@ function DataFetching() {
             setGames(data.data.results)
             // games.push(data.data.results)
             // setGames(response.data.results[1])
-            console.log(games, "Array after setGames is called, before mapping")
+            // console.log(games, "Array after setGames is called, before mapping")
         })
         .catch( err => {
             console.log(err)

@@ -13,9 +13,12 @@ function TitleForm () {
       const handleSubmit = e => {
           e.preventDefault();
           console.log("Submitted Title",title)
-          return title === ""//if the form is empty return null
+          setTitle("")
+          return (
+            title === ""//if the form is empty return null
           ? null : submitTitle(title)  //if not submit new state
-        // setTitle("")
+          ) 
+       
           
       }
       return (
