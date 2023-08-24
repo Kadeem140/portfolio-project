@@ -9,7 +9,8 @@ import GenreForm from '../Features/forms/GenreForm';
 
 import apiKey from '../utils/apiKey';
 import './index.css';
-import '../'
+import "."
+
 
 
 const url = `https://rawg.io/api/games?key=${apiKey}&dates=2023-01-01, 2023-07-28&ordering=-added`
