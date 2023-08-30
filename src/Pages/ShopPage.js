@@ -8,10 +8,15 @@ import TitleForm from '../Features/forms/TitleForm';
 import GenreForm from '../Features/forms/GenreForm';
 
 import apiKey from '../utils/apiKey';
-import './index.css';
-import "."
+// import './index.css';
+import '../index.css'
+import './pages.css';
 
-
+const getPlatformStr = (str) => {
+        return str.map((e) => {
+            return e.name
+        })
+}
 
 const url = `https://rawg.io/api/games?key=${apiKey}&dates=2023-01-01, 2023-07-28&ordering=-added`
 

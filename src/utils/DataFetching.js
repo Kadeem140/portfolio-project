@@ -7,7 +7,7 @@ import './DataFetching.css';
 let nextGameListUrl = null;
 
 
-const url = `https://rawg.io/api/games?key=${apiKey}&dates=2023-01-01,2023-07-28&ordering=-added`
+const url = `https://rawg.io/api/games?key=${apiKey}&dates=2023-01-01,2023-08-24&ordering=-added`
 
 function DataFetching() {
 
