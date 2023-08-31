@@ -1,5 +1,6 @@
 import {Card, CardImg, CardText, CardBody, CardTitle, Button} from 'reactstrap';
-import Favorites from '../../Features/user/Favorites';
+import Favorites from '../user/Favorites';
+import "./gameCard.css"
 // import FontAwesomeIcon from 'font-awesome';
 
 const DisplayCard = (props) => { //image, title, genre, rating, etc
@@ -22,8 +23,8 @@ const DisplayCard = (props) => { //image, title, genre, rating, etc
 
     return (
         <>
-            <Card>
-                <CardImg src={props.game.background_image} alt={props.game.name} className='imageCard'/>
+            <Card className='product'>
+                <CardImg src={props.game.background_image} alt={props.game.name} className='products'/>
                 <CardBody className = "cardBody">
                     <CardTitle className='cardText'>{props.game.name}</CardTitle>
                     <i class="fa fa-star fa-lg" > {props.game.rating}</i>

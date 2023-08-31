@@ -1,6 +1,6 @@
 import Description from "../Components/Description";
 import Header from "../Components/Header";
-import DisplayList from "../Features/display/DisplayList";
+import DisplayList from "../Features/games/GameCardList";
 import DataFetching from "../utils/DataFetching";
 
 

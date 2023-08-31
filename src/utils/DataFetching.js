@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios'
 import apiKey from './apiKey';
-import DisplayCard from '../Features/display/DisplayCard';
-import DisplayList from '../Features/display/DisplayList';
+import DisplayCard from '../Features/games/GameCard';
+
+import DisplayList from '../Features/games/GameCardList';
 import './DataFetching.css';
 let nextGameListUrl = null;
 

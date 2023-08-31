@@ -1,5 +1,12 @@
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
+import apiKey from '../../utils/apiKey';
+// import Game
+
 import {Col, Row} from 'reactstrap';
-import DisplayCard from './DisplayCard';
+import DisplayCard from './GameCard';
+import "./gameCard.css"
+import "../../Pages/pages.css"
 
 
 const DisplayList = (props) => {
@@ -9,11 +16,13 @@ const DisplayList = (props) => {
     return (
         //Maps over some slice of start, checks if valid then returns
         //
-        <Row>
-            <Col md className='m-1' >
+        
+          <div className = "parent">
+
                 <DisplayCard game={props.game} />
-            </Col>
-        </Row>
+            
+          </div>
+        
     )
 }
 
