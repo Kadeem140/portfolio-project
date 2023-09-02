@@ -19,7 +19,6 @@ const GameCard = (props) => { //image, title, genre, rating, etc
     }
 
     const parentPlatforms = props.game.parent_platforms
-    console.log(parentPlatforms, "PARENTS")
 
     return (
         <>

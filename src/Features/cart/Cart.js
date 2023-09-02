@@ -1,15 +1,12 @@
-const Cart = { 
-    [
+
+export const CART = [
         {
             image: '',
-            name: '',
+            name: 'Test',
             rating: '',
             metacritic: '',
             released: '',
-            platforms : []
+            platforms: []
         }
-    ]
-    
-};
-
-export default Cart;
+    ];
+;
