@@ -3,7 +3,7 @@ import Favorites from '../user/Favorites';
 import "./gameCard.css"
 // import FontAwesomeIcon from 'font-awesome';
 
-const DisplayCard = (props) => { //image, title, genre, rating, etc
+const GameCard = (props) => { //image, title, genre, rating, etc
     // console.log("Games Card Props", props)
     
     const getPlatformStr = (str) => {
@@ -53,4 +53,4 @@ const DisplayCard = (props) => { //image, title, genre, rating, etc
 
 }
 
-export default DisplayCard
+export default GameCard

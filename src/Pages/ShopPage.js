@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import axios from "axios";
-import DataFetching from '../utils/DataFetching';
 import FetchPopularGames from '../utils/FetchPopularGames';
 import Header from '../Components/Header';
-import DisplayCard from '../Features/games/GameCard';
+import GameCard from '../Features/games/GameCard';
+import GameCardList from '../Features/games/GameCardList';
 import TitleForm from '../Features/forms/TitleForm';
 import GenreForm from '../Features/forms/GenreForm';
 
@@ -46,7 +46,7 @@ function ShopPage() {
                 <GenreForm />
             </div>
                 <FetchPopularGames />
-                <DataFetching />
+                <GameCardList />
         </div>
     )
 }

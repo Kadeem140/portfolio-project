@@ -11,7 +11,6 @@ import Header from './Components/Header';
 import Description from './Components/Description';
 import axios from 'axios';
 import apiKey from './utils/apiKey';
-import DataFetching from './utils/DataFetching';
 import Footer from './Components/Footer';
 
 const url = `https://rawg.io/api/games?key=${apiKey}&dates=2023-01-01, 2023-07-28&ordering=-added`
@@ -53,7 +52,7 @@ function App() {
         <Route path="/shop" element={<ShopPage />} />
         <Route path="/total" element={<TotalOrdersPage />} />
       </Routes>
-      {/* <DataFetching /> */}
+    
 
       <Footer />
     </div>

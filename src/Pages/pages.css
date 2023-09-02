@@ -1,10 +1,10 @@
 .parent {
     position: relative;
-    background-color: #0b5394;
+    background-color: white;
   }
   
   .cardBody {
-    background-color:#605356;
+    background-color:#6fa8dc;
   }
 
   .cardText {
