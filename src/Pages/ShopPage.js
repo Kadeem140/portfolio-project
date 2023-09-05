@@ -6,6 +6,7 @@ import GameCard from '../Features/games/GameCard';
 import GameCardList from '../Features/games/GameCardList';
 import TitleForm from '../Features/forms/TitleForm';
 import GenreForm from '../Features/forms/GenreForm';
+import CartList from '../Features/cart/CartList';
 
 import apiKey from '../utils/apiKey';
 // import './index.css';
@@ -45,6 +46,7 @@ function ShopPage() {
                 <TitleForm />
                 <GenreForm />
             </div>
+                <CartList />
                 <FetchPopularGames />
                 <GameCardList />
         </div>

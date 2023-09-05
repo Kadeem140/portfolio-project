@@ -1,24 +1,41 @@
 import {Card, CardImg, CardText, CardBody, CardTitle, Button} from 'reactstrap';
 import Favorites from '../user/Favorites';
+import { useDispatch } from 'react-redux';
 import "./gameCard.css"
+import { addCartItem } from '../cart/cartSlice';
 // import FontAwesomeIcon from 'font-awesome';
 
 const GameCard = (props) => { //image, title, genre, rating, etc
     // console.log("Games Card Props", props)
-    
-    const getPlatformStr = (str) => {
-         str.map((e) => {
-            return (
-                <CardText>{e.name}</CardText>
-            )
-        })
-}
-
-    const addFavorite = (obj) => {
-       return Favorites.push(obj)
-    }
+    const dispatch = useDispatch();
 
     const parentPlatforms = props.game.parent_platforms
+
+    const game = {
+        image: props.game.background_image,
+        name: props.game.name,
+        rating: props.game.rating,
+        metacritic: props.game.metacritic,
+        released: props.game.released,
+        platforms: parentPlatforms.map((e) => {
+            return (
+                e.platform.name
+            )
+        }),
+        // date: new Date(Date.now())
+    }
+
+    const addToCart = () => {
+        console.log('Game:', game);
+        dispatch(addCartItem(game));
+
+    }
+
+    // const addFavorite = (obj) => {
+    //    return Favorites.push(obj)
+    // }
+
+    
 
     return (
         <>
@@ -39,7 +56,7 @@ const GameCard = (props) => { //image, title, genre, rating, etc
 
                     <Button>Favorite</Button>
                     <Button>See More</Button>
-                    <Button>Add to Cart</Button>
+                    <Button onClick={addToCart}> Add to Cart</Button>
                     
                 </div>
                    
