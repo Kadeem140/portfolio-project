@@ -1,5 +1,6 @@
 import {Card, CardImg, CardText, CardBody, CardTitle, Button} from 'reactstrap';
 import { useDispatch } from 'react-redux';
+import { removeFromCart } from './cartSlice';
 import "../games/gameCard.css"
 
 
@@ -10,8 +11,9 @@ const CartCard = (props) => {
     const platforms = props.game.platforms;
 
     //Build this reducer!!
-    const removeFromCart = () => {
-        // dispatch(removeFromCart())
+    const remove = () => {
+        console.log("item removed!")
+        dispatch(removeFromCart())
     }
 
     return (
@@ -28,6 +30,10 @@ const CartCard = (props) => {
                             <CardText className= 'platformsCard'>{e}</CardText>
                         )
                     })}</CardText> 
+
+                    <div className='buttons'>
+                        <Button onClick={remove}>X</Button>
+                    </div>
                    
                 </CardBody>
             </Card>
