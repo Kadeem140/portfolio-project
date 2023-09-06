@@ -1,6 +1,6 @@
 import {Card, CardImg, CardText, CardBody, CardTitle, Button} from 'reactstrap';
 import { useDispatch } from 'react-redux';
-import "./gameCard.css"
+import "../games/gameCard.css"
 
 
 const CartCard = (props) => {
@@ -25,7 +25,7 @@ const CartCard = (props) => {
                     <CardText className='cardText'><i class="fa fa-calendar fa-lg" > Released: {props.game.released}</i></CardText>
                     <CardText className='platformsCard'> Platforms: {platforms.map((e) => {
                         return (
-                            <CardText className= 'platformsCard'>{e.platform.name}</CardText>
+                            <CardText className= 'platformsCard'>{e}</CardText>
                         )
                     })}</CardText> 
                    

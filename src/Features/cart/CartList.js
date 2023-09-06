@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import {Col, Row } from 'reactstrap';
 import GameCard from '../games/GameCard';
+import CartCard from "./CartCard";
 import { selectAllCartItems } from "./cartSlice";
 
 const CartList = () => {
@@ -14,7 +15,7 @@ const CartList = () => {
                     console.log(game, "game to be mapped:")
                     return (
                         <Col md="5" className='m-4' key={game.id}>
-                            <GameCard game={game} />
+                            <CartCard game={game} />
                         </Col> 
                         
                     
