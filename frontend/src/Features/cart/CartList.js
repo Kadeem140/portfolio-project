@@ -1,12 +1,10 @@
 import { useSelector } from "react-redux";
 import {Col, Row } from 'reactstrap';
-import GameCard from '../games/GameCard';
 import CartCard from "./CartCard";
 import { selectAllCartItems } from "./cartSlice";
 
 const CartList = () => {
     const cartItems = useSelector(selectAllCartItems);
-    console.log(cartItems, "Test Cart")
 
     return (
         <Row className="ms-auto">

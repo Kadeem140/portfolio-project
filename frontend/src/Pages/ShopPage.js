@@ -7,6 +7,7 @@ import GameCardList from '../Features/games/GameCardList';
 import TitleForm from '../Features/forms/TitleForm';
 import GenreForm from '../Features/forms/GenreForm';
 import CartList from '../Features/cart/CartList';
+import ShoppingCart from '../Features/cart/shoppingCart';
 
 import apiKey from '../utils/apiKey';
 // import './index.css';
@@ -27,9 +28,9 @@ function ShopPage() {
     useEffect(() => {
         axios.get(url)
         .then(response => {
-            console.log(response, "res")
+            // console.log(response, "res")
             setGamesData(response.data.results)
-            console.log(gamesData, "Games data Array")
+            // console.log(gamesData, "Games data Array")
         })
         .catch(err => console.log(err))
     }, [])
@@ -46,7 +47,9 @@ function ShopPage() {
                 <TitleForm />
                 <GenreForm />
             </div>
+                <ShoppingCart />
                 <CartList />
+
                 <FetchPopularGames />
                 <GameCardList />
         </div>

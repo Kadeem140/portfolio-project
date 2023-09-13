@@ -10,7 +10,6 @@ const CartCard = (props) => {
 
     const platforms = props.game.platforms;
 
-    //Build this reducer!!
     const remove = () => {
         console.log("item removed!")
         dispatch(removeFromCart())

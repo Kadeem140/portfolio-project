@@ -14,7 +14,7 @@ const GameCardList = (props) => {
     useEffect(() => {
         axios.get(url)
         .then(data => {
-            console.log(data, "API get call data")
+            // console.log(data, "API get call data")
             nextGameListUrl = data.next ? data.next : null;
             setGames(data.data.results)
         })

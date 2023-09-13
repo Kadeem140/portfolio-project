@@ -1,6 +1,6 @@
 .parent {
     position: relative;
-    background-color: white;
+    background-color:#6fa8dc;
   }
   
   .cardBody {
@@ -8,11 +8,11 @@
   }
 
   .cardText {
-    color: azure;
+    color: black;
   }
 
 .platformsCard {
-  color: azure;
+  color: black;
   width: min-content;
 }
 
