@@ -16,6 +16,7 @@ const CartCard = (props) => {
     }
 
     return (
+        //<Stack direct
         <>
             <Card className='product'>
                 <CardImg src={props.game.image} alt={props.game.name} className='products'/>

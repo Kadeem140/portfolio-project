@@ -23,18 +23,6 @@ const getPlatformStr = (str) => {
 const url = `https://rawg.io/api/games?key=${apiKey}&dates=2023-01-01, 2023-07-28&ordering=-added`
 
 function ShopPage() {
-    const [gamesData, setGamesData] = useState([ ]);
-
-    useEffect(() => {
-        axios.get(url)
-        .then(response => {
-            // console.log(response, "res")
-            setGamesData(response.data.results)
-            // console.log(gamesData, "Games data Array")
-        })
-        .catch(err => console.log(err))
-    }, [])
-
     const [text, setText] = useState("")
 
     return (

@@ -1,10 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit";
-
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 const initialState = {
-    cartArray: [],
-    quantity: 0,
-    // total: 1
+    cartArray: localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem
+        ("cartItems")) : [],
+    cartTotalQuantity: 0,
+    cartTotalAmount: 0,
 }
 
 const cartSlice = createSlice({
@@ -12,20 +13,24 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         addCartItem : (state, action) => {
-            console.log(state, "State")
-            console.log("add cart item action payload:", action.payload);
-            console.log("add Cart Item state.cartArray:", state.cartArray);
-            
-            const newCartItem = {
-                id : state.cartArray.length + 1,
-                ...action.payload
-            };
-            state.quantity += 1;
-            return state.cartArray.push(newCartItem);
+           const itemIndex = state.cartArray.findIndex(
+                (item) => item.id === action.payload.id
+            );
+            if(itemIndex >= 0){
+                state.cartArray[itemIndex].cartQuantity += 1;
+                toast.info(`increased ${state.cartArray[itemIndex].name} cart quantity`, {
+                    position: "bottom-left",
+                });
+            } else {
+                const tempProduct = {...action.payload, cartQuantity : 1};
+                state.cartArray.push(tempProduct);
+                toast.success(`${action.payload.name} has been added to your cart.`, {
+                    position: "bottom-left",
+                });
+            }
 
-            // console.log(state.cartArray, "After add cart Item");
+            localStorage.setItem("cartItems", JSON.stringify(state.cartArray));
 
-            // return [...state.cartArray, newCartItem]
         },
         removeFromCart : (state, action) => {
             // ...state
@@ -39,17 +44,19 @@ const cartSlice = createSlice({
         increaseCartQuantity : (state, action) => {
             console.log("increase Cart item action payload:",action.payload);
             console.log("increase Cart Item state.cartArray:", state.cartArray);
-            if (state.cartArray.find(item => item.id === action.payload) == null){
-                return [ ...state.cartArray, {action , quantity: 1}]
-            } else {
-                return state.cartArray.map(item => {
-                    if( item.id === action.payload){
-                        return {...item, quantity: item.quantity + 1}
-                    } else {
-                        return item
-                    }
-                })
-            }
+            state.cartTotalQuantity = state.cartTotalAmount + 1
+            console.log(state.cartTotalAmount, "New total")
+            // if (state.cartArray.find(item => item.id === action.payload) == null){
+            //     return [ ...state.cartArray, {action , quantity: 1}]
+            // } else {
+            //     return state.cartArray.map(item => {
+            //         if( item.id === action.payload){
+            //             return {...item, quantity: item.quantity + 1}
+            //         } else {
+            //             return item
+            //         }
+            //     })
+            // }
         }
     }
 });
@@ -63,7 +70,7 @@ export const { increaseCartQuantity} = cartSlice.actions;
 
 
 export const selectAllCartItems = (state) => {
-    // console.log(state)
+    console.log(state)
     return state.cart.cartArray;
 }
 

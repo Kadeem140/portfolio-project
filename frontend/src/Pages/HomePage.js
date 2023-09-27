@@ -3,9 +3,9 @@ import Header from "../Components/Header";
 import DisplayList from "../Features/games/GameCardList";
 
 
-
-
 const HomePage = () => {
+
+
     return (
         <>
             <Header />

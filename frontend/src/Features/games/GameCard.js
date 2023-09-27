@@ -109,7 +109,7 @@ const GameCard = (props) => { //image, title, genre, rating, etc
                     
                 </div> */}
                    
-                   {quantity === 0 ? (
+                   {quantity <= 10 ? (
                     <Button className= "w-100" onClick={addToCart}>+ Add to Cart</Button>
                    ) : <div className = "d-flex align-items-center flex-column"
                             style={{gap: ".5rem"}}
